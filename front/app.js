@@ -31,6 +31,10 @@ app.controller('timecontroller', function($scope, $http){
 	$scope.TimeInput.speed = null; 
 	$scope.TimeInput.distance = null; 
 	$scope.TimeInput.time = null; 
+
+	
+
+	if($scope.TimeInput.speed == 0) $scope.TimeInput.distance = 10 
 	
 
 	// 	$scope.postRequest = function() {

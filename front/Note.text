@@ -1,4 +1,6 @@
 
+for event handling: https://www.w3schools.com/angular/ng_ng-change.asp
+
 speed = distance / time 
 distance = speed * time 
 time = distance / speed 
