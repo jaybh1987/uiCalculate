@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	</head>
+	<body ng-controller="timecontroller">
+
+        <h2>{{val}}</h2>
+        <br>
+
+        <div>
+            
+            <table>
+                <tr>
+                    <td>Enter speed: </td>
+                    <td><input type="number" ng-model="TimeInput.speed"></td>
+                </tr>
+                <tr>
+                    <td>Enter distance: </td>
+                    <td><input type="number" ng-model="TimeInput.distance"></td>
+                </tr>
+                <tr>
+                    <td>Enter time: </td>
+                    <td><input type="number" ng-model="TimeInput.time"></td>
+                </tr>
+                <tr>
+                    <td><button ng-click="doCalculation()">Calculate</button></td>
+                    <td>{{ result.data }}</td>
+                </tr>
+            </table>
+
+            <!-- Speed = {{TimeInput.speed}}
+            Distance = {{TimeInput.distance}}
+            Time = {{TimeInput.time}}
+            object = {{TimeInput}} -->
+        
+            
+
+        </div>
+		<!--  <div ng-controller="testController">
+		<h2>Service</h2>
+
+		<button ng-click="getRequest()">Hi</button>
+		{{ home }}
+		<h2>{{response.data}}</h2>
+
+		Enter Item Name: <input ng-model="item.name">
+		name = {{ item.name }}
+		<br>
+		<button ng-click="postRequest()">hello.</button>
+
+		<button ng-click="getItem()">getItems</button>
+		{{ response.data}}
+		<script src="script.js"></script> 
+		</div>  -->
+	</body >
+	
+</html>
+
+

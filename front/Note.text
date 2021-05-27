@@ -1,0 +1,12 @@
+
+speed = distance / time 
+distance = speed * time 
+time = distance / speed 
+
+
+
+	$scope.TimeInput = {"speed": 0, "distance": 0, "time": 0}
+    
+	$scope.TimeInput.speed = 0; 
+	$scope.TimeInput.distance = 0; 
+	$scope.TimeInput.time = 0; 

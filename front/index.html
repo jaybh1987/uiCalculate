@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+	<head>
+	<meta charset="UTF-8">
+	<script>document.write('<base href="' + document.location + '" />');</script> 
+	<script data-require="angular.js@1.0.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js" data-semver="1.0.7"></script>
+	<script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.min.js"></script>
+	<script src="app.js"></script>
+	<link rel="stylesheet" href="index.css">
+
+
+	</head>
+	<body ng-controller="Mainctrl">
+
+		<h1>Akka Http Application</h1>
+		<div class="topnav">
+			<h3><a ui-sref="timecal">Time</a></h3>
+			<h3><a ui-sref="percal">Percentage</a></h3>
+			<h3><a ui-sref="areacal">Area</a></h3>	
+		</div>
+		
+		<div ui-view></div>
+
+
+		<!--  <div ng-controller="testController">
+		<h2>Service</h2>
+
+		<button ng-click="getRequest()">Hi</button>
+		{{ home }}
+		<h2>{{response.data}}</h2>
+
+		Enter Item Name: <input ng-model="item.name">
+		name = {{ item.name }}
+		<br>
+		<button ng-click="postRequest()">hello.</button>
+
+		<button ng-click="getItem()">getItems</button>
+		{{ response.data}}
+		<script src="script.js"></script> 
+		</div>  -->
+	</body >
+	
+</html>
+
+
+
+	
