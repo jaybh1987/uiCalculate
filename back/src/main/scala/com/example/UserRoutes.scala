@@ -47,13 +47,23 @@ class UserRoutes(userRegistry: ActorRef[UserRegistry.Command])(implicit val syst
     Future { Done }
   }
 
-  def calculating(t: TimeInput): Future[Double]= Future {
-    if(!t.speed.isDefined) {
-      t.distance.getOrElse(0d) / t.time.getOrElse(0d)
-    } else if(!t.distance.isDefined) {
-      t.speed.getOrElse(0d) * t.time.getOrElse(0d)
+  def calculating(t: TimeInput): Future[String]= Future {
+
+    implicit def f: Option[Double] => Double = x => x.getOrElse(0d)
+
+    if(t.speed.isEmpty && t.time.isEmpty && t.distance.isEmpty) {
+      "Please fill atlest two fields."
     } else {
-      t.distance.getOrElse(0d) / t.speed.getOrElse(0d)
+      if(t.speed.isEmpty) {
+        val speed = t.distance.getOrElse(0d) / t.time.getOrElse(0d)
+        s"your speed should be  $speed if you have covered ${t.distance} kilometers in ${t.time} hours."
+      } else if(t.distance.isEmpty) {
+        val distance = t.speed.getOrElse(0d) * t.time.getOrElse(0d)
+        s"You can cover $distance km when you speed is ${t.speed} and time taken is ${t.time}"
+      } else {
+        val time = t.distance.getOrElse(0d) / t.speed.getOrElse(0d)
+        s"It will take $time hours to cover distance of ${t.distance} km when your speed is ${t.speed}"
+      }
     }
   }
 
@@ -97,9 +107,9 @@ class UserRoutes(userRegistry: ActorRef[UserRegistry.Command])(implicit val syst
           path("calculate") {
             entity(as[TimeInput]) {
               t =>
-                val mayBeAns: Future[Double] = calculating(t)
+                val mayBeAns: Future[String] = calculating(t)
                 onSuccess(mayBeAns) {
-                  case d => complete(d.toString)
+                  case d: String => complete(d)
                   case _ => complete(StatusCodes.NotFound)
                 }
             }
