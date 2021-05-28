@@ -1,7 +1,0 @@
-[0m[[0m[33mwarn[0m] [0m[0m/home/laitmatus/Desktop/Learning_projects/akkaProjects/project01/src/main/scala/com/example/UserRoutes.scala:102:24: patterns after a variable pattern cannot match (SLS 8.1.1)[0m
-[0m[[0m[33mwarn[0m] [0m[0m                  case d => complete(d.toString)[0m
-[0m[[0m[33mwarn[0m] [0m[0m                       ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/laitmatus/Desktop/Learning_projects/akkaProjects/project01/src/main/scala/com/example/UserRoutes.scala:103:37: unreachable code due to variable pattern 'd' on line 102[0m
-[0m[[0m[33mwarn[0m] [0m[0m                  case _ => complete(StatusCodes.NotFound)[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                    ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
