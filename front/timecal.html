@@ -15,21 +15,22 @@
             <table>
                 <tr>
                     <td>Enter speed: </td>
-                    <td><input type="number" ng-keyup="myFunc()" placeholder="Enter Number" ng-model="TimeInput.speed"></td>
+                    <td><input type="number" ng-disabled="s()" placeholder="Enter Speed" ng-model="TimeInput.speed"></td>
                 </tr>
                 <tr>
                     <td>Enter distance: </td>
-                    <td><input type="number" placeholder="Enter Number" ng-model="TimeInput.distance"></td>
+                    <td><input type="number" ng-disabled="d()" placeholder="Enter Kilometers" ng-model="TimeInput.distance"></td>
                 </tr>
                 <tr>
                     <td>Enter time: </td>
-                    <td><input type="number" placeholder="Enter Number" ng-model="TimeInput.time"></td>
+                    <td><input type="number" ng-disabled="t()" placeholder="Enter Hours" ng-model="TimeInput.time"></td>
                 </tr>
                 <tr>
                     <td><button ng-click="doCalculation()">Calculate</button></td>
                     <td>{{ result.data }}</td>
                 </tr>
             </table>
+
 
             <!-- Speed = {{TimeInput.speed}}
             Distance = {{TimeInput.distance}}

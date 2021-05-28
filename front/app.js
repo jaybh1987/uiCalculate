@@ -32,10 +32,17 @@ app.controller('timecontroller', function($scope, $http){
 	$scope.TimeInput.distance = null; 
 	$scope.TimeInput.time = null; 
 
-	
+	$scope.t = function(){
+		return $scope.TimeInput.distance > 0 && $scope.TimeInput.speed > 0 && $scope.TimeInput.time == null
+	}
 
-	if($scope.TimeInput.speed == 0) $scope.TimeInput.distance = 10 
-	
+	$scope.d = function(){
+		return $scope.TimeInput.time > 0 && $scope.TimeInput.speed > 0 && $scope.TimeInput.distance == null
+	}
+
+	$scope.s = function(){
+		return $scope.TimeInput.distance > 0 && $scope.TimeInput.time > 0 && $scope.TimeInput.speed == null
+	}
 
 	// 	$scope.postRequest = function() {
 // 		$scope.data = $scope.item
