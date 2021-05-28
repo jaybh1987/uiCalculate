@@ -49,7 +49,7 @@ class UserRoutes(userRegistry: ActorRef[UserRegistry.Command])(implicit val syst
 
   def calculating(t: TimeInput): Future[String]= Future {
 
-    implicit def f: Option[Double] => Double = x => x.getOrElse(0d)
+    implicit val f: Option[Double] => Double = x => x.getOrElse(0d)
 
     if(t.speed.isEmpty && t.time.isEmpty && t.distance.isEmpty) {
       "Please fill atlest two fields."

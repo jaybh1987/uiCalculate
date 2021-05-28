@@ -3,6 +3,7 @@
 
 	<head>
 	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	</head>
 	<body ng-controller="timecontroller">
@@ -26,7 +27,7 @@
                     <td><input type="number" ng-disabled="t()" placeholder="Enter Hours" ng-model="TimeInput.time"></td>
                 </tr>
                 <tr>
-                    <td><button ng-click="doCalculation()">Calculate</button></td>
+                    <td><button class="button" ng-click="doCalculation()"><span>Calculate</span></button></td>
                     <td>{{ result.data }}</td>
                 </tr>
             </table>
