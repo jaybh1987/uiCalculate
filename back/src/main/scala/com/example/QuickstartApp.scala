@@ -36,6 +36,7 @@ object QuickstartApp {
   def main(args: Array[String]): Unit = {
     //#server-bootstrapping
     val rootBehavior = Behaviors.setup[Nothing] { context =>
+
       val userRegistryActor = context.spawn(UserRegistry(), "UserRegistryActor")
       context.watch(userRegistryActor)
 
@@ -44,6 +45,12 @@ object QuickstartApp {
 
       Behaviors.empty
     }
+
+//    val mathBehavior = Behaviors.setup[Nothing] { context =>
+//      val mathRegistryActor = context.spawn(MathRegistry(), "MathRegistoryActor")
+//      context.watch(mathRegistryActor)
+//    }
+
     implicit val system = ActorSystem[Nothing](rootBehavior, "HelloAkkaHttpServer")
     //#server-bootstrapping
     implicit val executionContext = system.executionContext
