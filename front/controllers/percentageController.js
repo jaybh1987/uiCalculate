@@ -3,6 +3,9 @@ app.controller('percentcontroller', function($scope, $http){
 
 	$scope.amt1 = 0.0
 	$scope.amt2 = 0.0
+
+	$scope.a1 = 0.0
+	$scope.a2 = 0.0 
 	
 
 	// $scope.doCalculation = function() {
@@ -19,34 +22,27 @@ app.controller('percentcontroller', function($scope, $http){
 	// 	)
 	// }
 
-
-	// $scope.perOne = function() { 
-	// 	$http.get("http://localhost:8080/percent", {
-	// 		params: {
-	// 			amt1: $scope.amt1, 
-	// 			amt2: $scope.amt2
-	// 		}
-	// 	}).then(
-	// 		function successCallback(res) {
-	// 			$scope.result = res 
-	// 		}, 
-	// 		function errorCallback(res) {
-	// 			$scope.result = res 
-	// 		}
-	// 	)
-	// }
-
-		$scope.perOne = function() { 
-		$http.get("http://localhost:8080/testget").then(
-			function successCallback(res) {
-				$scope.result = res.data
+	$scope.percOne = function() {
+		$http.get("http://localhost:8080/percent/"+$scope.amt1+"/"+$scope.amt2).then(
+			function successcallback(res) {
+				$scope.result = res; 
 			}, 
-			function errorCallback(res) {
-				$scope.result = res 
+			function errorcallback(res) {
+				$scope.result = res; 
 			}
 		)
 	}
 
+	//whatper
 
-
+	$scope.perTwo = function() {
+		$http.get("http://localhost:8080/whatper/"+$scope.a1+"/"+$scope.a2).then(
+			function successcallback(res) {
+				$scope.res = res
+			}, 
+			function errorfunction(res) {
+				$scope.res = res 
+			}
+		)
+	}
 })  

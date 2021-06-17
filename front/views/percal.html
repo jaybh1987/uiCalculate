@@ -11,20 +11,36 @@
         <h2>{{val}}</h2>
 
 		<!-- https://www.calculator.net/percent-calculator.html -->
-		<table>
+		<table border="2px">
 			<tr>
-				<td><input type="number" ng-model="amt1">% of <input type="number" ng-model="amt2"> = 
-					{{percentOne.amt1}}
-					{{percentOne.amt2}}
-					<div>Answer </div> 
-					<button class="button" ng-click="perOne()"><span>Calculate</span></button>
+				<td>
+					<input type="number" ng-model="amt1">% of  
+				</td>
+
+				<td>
+					<input type="number" ng-model="amt2"> 
+				</td>
+
+				<td>
+					= {{result.data}}
+				</td>
+
+				<td>
+					<button class="button" ng-click="percOne()"><span>Calculate</span></button>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="number"> is what % of <input type="number">
+					<input type="number"> 
+				</td>
+				<td>
+					is what % of <input type="number">
+				</td>
+				<td>
 					<div> Answer </div> 
-					 <button class="button"><span>Calculate</span></button>
+				</td>
+				<td>
+					<button class="button"><span>Calculate</span></button>
 				</td>
 			</tr>
 			<tr>

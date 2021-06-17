@@ -90,9 +90,15 @@ class UserRoutes(userRegistry: ActorRef[UserRegistry.Command])(implicit val syst
             complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, "Say hello to akka-http"))
           }
         },
-        path("testget") {
+        path("whatper" / LongNumber / LongNumber) { (am1, am2) =>
+
           get{
-            complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, "this works all good."))
+            println(s"what percent API called.")
+            val maybeAns: Future[String] = whatPercentOf(am1, am2)
+            onSuccess(maybeAns) {
+              case d: String => complete(d)
+              case _ => complete(StatusCodes.NotFound)
+            }
           }
         },
         get{
@@ -107,7 +113,7 @@ class UserRoutes(userRegistry: ActorRef[UserRegistry.Command])(implicit val syst
           }
         },
         get {
-          path("percent" / DoubleNumber / DoubleNumber) {
+          path("percent" / LongNumber / LongNumber) {
             (amt1, amt2)  =>
               println("percetn method executed.")
 
