@@ -90,6 +90,11 @@ class UserRoutes(userRegistry: ActorRef[UserRegistry.Command])(implicit val syst
             complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, "Say hello to akka-http"))
           }
         },
+        path("testget") {
+          get{
+            complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, "this works all good."))
+          }
+        },
         get{
           pathPrefix("item" / LongNumber) {
             id =>
