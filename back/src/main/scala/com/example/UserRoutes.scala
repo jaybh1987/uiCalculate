@@ -67,6 +67,18 @@ class UserRoutes(userRegistry: ActorRef[UserRegistry.Command])(implicit val syst
     }
   }
 
+
+  //what is 10 % of 100
+  def amountCalculated(percent: Double, amount: Double): Future[String] = Future(s"${amount * percent/100}")
+
+  //10 is what percentage of 4
+  def whatPercentOf(amt1: Double, amt2: Double): Future[String] = Future(s"${(amt1/amt2) * 100}")
+
+  //10 is 50% of what
+  def xIsYpercentOfWhat(x: Double, y: Double): Future[String] = Future( s"${(x/ y) * 100}")
+
+
+
 //  def saveOrder(order: Order): Future[Option[Item]]
 
   val s = CorsSettings.defaultSettings.withAllowGenericHttpRequests(true)
@@ -87,6 +99,19 @@ class UserRoutes(userRegistry: ActorRef[UserRegistry.Command])(implicit val syst
               onSuccess(maybeIteam) {
                 case Some(item) => complete(item)
                 case None => complete(StatusCodes.NotFound)
+              }
+          }
+        },
+        get {
+          path("percent" / DoubleNumber / DoubleNumber) {
+            (amt1, amt2)  =>
+              println("percetn method executed.")
+
+              val maybeAns: Future[String] = amountCalculated(amt1, amt2)
+
+              onSuccess(maybeAns) {
+                case d: String => complete(d)
+                case _ => complete(StatusCodes.NotFound)
               }
           }
         },

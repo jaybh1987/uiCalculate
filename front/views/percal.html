@@ -13,16 +13,25 @@
 		<!-- https://www.calculator.net/percent-calculator.html -->
 		<table>
 			<tr>
-				<td><input type="number">% of <input type="number"> = <input type="number"> <button class="button"><span>Calculate</span></button></td>
-			</tr>
-			<tr>
-				<td>
-					<input type="number"> is what % of <input type="number"> <button class="button"><span>Calculate</span></button>
+				<td><input type="number" ng-model="percentOne.amt1">% of <input type="number" ng-model="percentOne.amt2"> = 
+					{{percentOne.amt1}}
+					{{percentOne.amt2}}
+					<div>Answer </div> 
+					<button class="button"><span>Calculate</span></button>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="number"> is <input type="number">% of what <button class="button"><span>Calculate</span></button>
+					<input type="number"> is what % of <input type="number">
+					<div> Answer </div> 
+					 <button class="button"><span>Calculate</span></button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="number"> is <input type="number">% of what 
+					<div> Answer </div>
+					<button class="button"><span>Calculate</span></button>
 				</td>
 			</tr>
 		</table>
