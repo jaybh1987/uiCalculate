@@ -76,10 +76,7 @@ class UserRoutes(userRegistry: ActorRef[UserRegistry.Command])(implicit val syst
 
   //10 is 50% of what
   def xIsYpercentOfWhat(x: Double, y: Double): Future[String] = Future( s"${(x/ y) * 100}")
-
-  def fun(x: Int): Int = x
-
-
+  
 
 //  def saveOrder(order: Order): Future[Option[Item]]
 
