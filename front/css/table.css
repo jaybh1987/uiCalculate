@@ -1,8 +1,9 @@
 table {
-    width: 70%;
+    width: 40%;
 }
 
 
 table tr td + td {
     width: 10%;
 }
+
