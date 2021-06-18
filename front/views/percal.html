@@ -4,14 +4,15 @@
 	<head>
 	<meta charset="UTF-8">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="ccs/index.css">
+	<link rel="stylesheet" href="ccs/index.css" type="text/css">
+	<link rel="stylesheet" href="css/table.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	</head>
 	<body ng-controller="percentcontroller">
         <h2>{{val}}</h2>
 
 		<!-- https://www.calculator.net/percent-calculator.html -->
-		<table>
+		<table border="2px">
 			<tr>
 				<td>
 					<input type="number" ng-model="amt1">% of  <input type="number" ng-model="amt2"> 
@@ -28,7 +29,7 @@
 					<input type="number" ng-model="a1"> is what % of <input type="number" ng-model="a2">
 				</td>
 				<td>
-					<div> = {{res.data}} </div> 
+					 = {{res.data}}
 				</td>
 				<td>
 					<button class="button" ng-click="perTwo()"><span>Calculate</span></button>
@@ -36,7 +37,13 @@
 			</tr>
 			<tr>
 				<td>
-					<input type="number"> is <input type="number">% of what = <button class="button" ><span>Calculate</span></button>
+					<input type="number"> is <input type="number">% of what
+				</td>
+				<td>
+					= {{r.data}}
+				</td>
+				<td>
+					<button class="button" ><span>Calculate</span></button>
 				</td>
 			</tr>
 			<tr>
