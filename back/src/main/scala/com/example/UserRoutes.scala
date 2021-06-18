@@ -90,17 +90,6 @@ class UserRoutes(userRegistry: ActorRef[UserRegistry.Command])(implicit val syst
             complete(HttpEntity(ContentTypes.`text/html(UTF-8)`, "Say hello to akka-http"))
           }
         },
-        path("whatper" / LongNumber / LongNumber) { (am1, am2) =>
-
-          get{
-            println(s"what percent API called.")
-            val maybeAns: Future[String] = whatPercentOf(am1, am2)
-            onSuccess(maybeAns) {
-              case d: String => complete(d)
-              case _ => complete(StatusCodes.NotFound)
-            }
-          }
-        },
         get{
           pathPrefix("item" / LongNumber) {
             id =>
@@ -125,6 +114,29 @@ class UserRoutes(userRegistry: ActorRef[UserRegistry.Command])(implicit val syst
               }
           }
         },
+        get {
+          path("whatper" / LongNumber / LongNumber) { (am1, am2) =>
+
+            get{
+              println(s"what percent API called.")
+              val maybeAns: Future[String] = whatPercentOf(am1, am2)
+              onSuccess(maybeAns) {
+                case d: String => complete(d)
+                case _ => complete(StatusCodes.NotFound)
+              }
+            }
+          }
+        },
+        get {
+          path("ofwhat" / LongNumber / LongNumber) { (amt1, amt2) =>
+              val maybeAns: Future[String] = xIsYpercentOfWhat(amt1, amt2)
+              onSuccess(maybeAns) {
+                case d: String => complete(d)
+                case _ => complete(StatusCodes.NotFound)
+              }
+          }
+        }
+        ,
         post {
           path("create-order") {
             println(s"post request executed. items = ${orders}")

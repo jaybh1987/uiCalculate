@@ -37,13 +37,13 @@
 			</tr>
 			<tr>
 				<td>
-					<input type="number"> is <input type="number">% of what
+					<input type="number" ng-model="p1"> is <input type="number" ng-model="p2">% of what
 				</td>
 				<td>
-					= {{r.data}}
+					= {{rs.data}}
 				</td>
 				<td>
-					<button class="button" ><span>Calculate</span></button>
+					<button class="button" ng-click="perThree()"><span>Calculate</span></button>
 				</td>
 			</tr>
 			<tr>

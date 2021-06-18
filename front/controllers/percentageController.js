@@ -6,6 +6,9 @@ app.controller('percentcontroller', function($scope, $http){
 
 	$scope.a1 = 0.0
 	$scope.a2 = 0.0 
+
+	$scope.p1 = 0.0
+	$scope.p2 = 0.0
 	
 
 	// $scope.doCalculation = function() {
@@ -42,6 +45,17 @@ app.controller('percentcontroller', function($scope, $http){
 			}, 
 			function errorfunction(res) {
 				$scope.res = res 
+			}
+		)
+	} 
+
+	$scope.perThree = function() {
+		$http.get("http://localhost:8080/ofwhat/"+$scope.p1+"/"+$scope.p2).then(
+			function successCallback(r) {
+				$scope.rs = r
+			}, 
+			function errorFunction(r) {
+				$scope.rs = r
 			}
 		)
 	}
