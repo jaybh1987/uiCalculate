@@ -143,7 +143,7 @@ class UserRoutes(userRegistry: ActorRef[UserRegistry.Command])(implicit val syst
             entity(as[Order]) {
               order =>
                 val saved: Future[Done] = saveOrder(order)
-                onSuccess(saved){
+                onSuccess(saved) {
                   _ =>
                     complete("order created.")
                 }
@@ -164,6 +164,10 @@ class UserRoutes(userRegistry: ActorRef[UserRegistry.Command])(implicit val syst
         }
       )
     }
+
+
+
+
 
 
 //  def f(x: Int): String = {
