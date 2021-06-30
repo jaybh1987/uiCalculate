@@ -16,7 +16,9 @@
 	<script src="controllers/mainController.js"></script>
 	<script src="controllers/percentageController.js"></script>
 	<script src="controllers/timeController.js"></script> 
-	<script src="js/ws.js"></script>
+	<script src="controllers/charcontroller.js"></script> 
+	<script src="js/ws.js"></script> 
+
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 
 	<!-- test -->
@@ -27,6 +29,7 @@
 		<div class="topnav">
 			<h3><a ui-sref="timecal">Time</a></h3>
 			<h3><a ui-sref="percal">Percentage</a></h3>
+			<h3><a ui-sref="charcal">CPU</a></h3>
 		</div>
 		
 		<div ui-view></div>
@@ -48,8 +51,15 @@
 		{{ response.data}}
 		<script src="script.js"></script> 
 		</div>  -->
-		<!-- https://www.w3schools.com/angular/ng_ng-app.asp -->
+		<!-- https://www.w3schools.com/angular/ng_ng-app.asp --> 
+
+		
+
+
+	<script src="js/chart.min.js"></script>
+	
 	</body >
+
 	
 </html>
 

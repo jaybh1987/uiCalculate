@@ -1,5 +1,7 @@
 
-for event handling: https://www.w3schools.com/angular/ng_ng-change.asp
+for event handling: https://www.w3schools.com/angular/ng_ng-change.asp 
+for chart : https://www.chartjs.org/docs/latest/configuration/animations.html 
+
 
 speed = distance / time 
 distance = speed * time 
@@ -7,8 +9,8 @@ time = distance / speed
 
 
 
-	$scope.TimeInput = {"speed": 0, "distance": 0, "time": 0}
-    
-	$scope.TimeInput.speed = 0; 
-	$scope.TimeInput.distance = 0; 
-	$scope.TimeInput.time = 0; 
+$scope.TimeInput = {"speed": 0, "distance": 0, "time": 0}
+
+$scope.TimeInput.speed = 0; 
+$scope.TimeInput.distance = 0; 
+$scope.TimeInput.time = 0; 
