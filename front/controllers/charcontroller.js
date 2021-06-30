@@ -6,18 +6,36 @@ app.controller('chartcontroller', function($scope){
     var arr = []
     var counter = 0
 
-    setInterval(
-        function() {
-            console.log('counter', counter)
-            console.log(arr)
-            if(arr.length == 6) {
-                arr = arr.slice(1)
-            } else {
-                arr.push(counter = counter+1)
-            }
-        },
-        2000
-    )
+
+    function addData(chart, label, data) {
+        chart.data.labels.push(label);
+        chart.data.datasets.forEach((dataset) => {
+            dataset.data.push(data);
+        });
+        chart.update();
+    }
+    
+    function removeData(chart) {
+        chart.data.labels.pop();
+        chart.data.datasets.forEach((dataset) => {
+            dataset.data.pop();
+        });
+        chart.update();
+    }
+
+    // setInterval(
+    //     function() {
+    //         console.log('counter', counter)
+    //         console.log(arr)
+    //         if(arr.length == 6) { 
+                
+    //             removeData(myChart)
+    //         } else {            
+    //             addData(myChart, 'Looping tension', arr.push(counter = counter+1))
+    //         }
+    //     },
+    //     2000
+    // )
 
 
 
@@ -25,7 +43,7 @@ app.controller('chartcontroller', function($scope){
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Auguest', 'September', 'October', 'November', 'December'], 
         datasets: [{
             label: 'Looping tension', 
-            data: [10, 12, 3,45, 34, 23, 56], 
+            data: arr, 
             fill: false, 
             borderColor: 'rgp(75,192,192)'
         }]
