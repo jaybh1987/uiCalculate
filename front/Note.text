@@ -3,6 +3,8 @@ for event handling: https://www.w3schools.com/angular/ng_ng-change.asp
 for chart : https://www.chartjs.org/docs/latest/configuration/animations.html 
 
 
+
+for google charts: https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery/linechart
 speed = distance / time 
 distance = speed * time 
 time = distance / speed 
