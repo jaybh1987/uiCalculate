@@ -1,10 +1,14 @@
 
 for event handling: https://www.w3schools.com/angular/ng_ng-change.asp 
 for chart : https://www.chartjs.org/docs/latest/configuration/animations.html 
-
-
-
 for google charts: https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery/linechart
+for web-socket : https://javascript.info/websocket#:~:text=The%20WebSocket%20protocol%2C%20described%20in,connection%20and%20additional%20HTTP%2Drequests.
+
+
+
+
+
+
 speed = distance / time 
 distance = speed * time 
 time = distance / speed 

@@ -14,12 +14,7 @@ function($stateProvider){
 	})
 	.state("areacal", {
 		url:'/areacal', 
-		templateUrl: '/views/areacal.html', 
-		controller: 'areacontroller'
-	})
-	.state("charcal", {
-		url:'/chartcal', 
-		templateUrl: '/views/chartcal.html', 
-		controller: 'chartcontroller'
+		templateUrl: '/views/areacal.html'
+		
 	})
 }])
