@@ -1,4 +1,3 @@
-
 app.config(['$stateProvider', 
 function($stateProvider){
 	$stateProvider
@@ -11,5 +10,10 @@ function($stateProvider){
 		url:'/percal', 
 		templateUrl: '/views/percal.html', 
 		controller: 'percentcontroller'
+	})
+	.state("cpucal",  {
+		url:'/cpu', 
+		templateUrl: '/views/mycpu.html', 
+		controller: 'mycpuController'
 	})
 }])
