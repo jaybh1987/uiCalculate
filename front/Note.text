@@ -2,6 +2,7 @@
 for event handling: https://www.w3schools.com/angular/ng_ng-change.asp 
 for chart : https://www.chartjs.org/docs/latest/configuration/animations.html 
 
+for eventStream : https://dzone.com/articles/html5-server-sent-events 
 
 speed = distance / time 
 distance = speed * time 
