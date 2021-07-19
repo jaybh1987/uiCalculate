@@ -36,6 +36,9 @@ class UserRoutes(userRegistry: ActorRef[UserRegistry.Command])(implicit val syst
     userRegistry.ask(DeleteUser(name, _))
 
   def fetchItem(itemId: Long):Future[Option[Item]] = Future {
+    println("hello world.;dkdkdk")
+
+    println("hellow rodl")
     UserRegistry.orders.find( o => o.id == itemId)
   }
 

@@ -12,14 +12,4 @@ function($stateProvider){
 		templateUrl: '/views/percal.html', 
 		controller: 'percentcontroller'
 	})
-	.state("areacal", {
-		url:'/areacal', 
-		templateUrl: '/views/areacal.html', 
-		controller: 'areacontroller'
-	})
-	.state("charcal", {
-		url:'/chartcal', 
-		templateUrl: '/views/chartcal.html', 
-		controller: 'chartcontroller'
-	})
 }])
